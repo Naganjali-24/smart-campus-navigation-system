@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870186875900",
+    "project_id": "smart-campus-navigation-3cd05",
+    "storage_bucket": "smart-campus-navigation-3cd05.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870186875900:android:2e593a8a675d1a276e5079",
+        "android_client_info": {
+          "package_name": "com.example.smart_campus_navigation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUOVxdKNXkJxQHKYflObnLKBqIoQOmkX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

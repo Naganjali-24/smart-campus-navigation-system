@@ -2,6 +2,8 @@ final List<Map<String, dynamic>> rooms = [
 
   // ================= BLOCK 1 =================
 
+  // GROUND FLOOR
+
   {
     "roomNo": "1001A",
     "roomName": "Office",
@@ -54,6 +56,20 @@ final List<Map<String, dynamic>> rooms = [
   // FIRST FLOOR
 
   {
+    "roomNo": "1101",
+    "roomName": "Classroom",
+    "block": "Block 1",
+    "floor": "First Floor"
+  },
+
+  {
+    "roomNo": "1102",
+    "roomName": "Classroom",
+    "block": "Block 1",
+    "floor": "First Floor"
+  },
+
+  {
     "roomNo": "1103",
     "roomName": "Chemistry Lab",
     "block": "Block 1",
@@ -70,6 +86,27 @@ final List<Map<String, dynamic>> rooms = [
   {
     "roomNo": "1105",
     "roomName": "PPS Lab",
+    "block": "Block 1",
+    "floor": "First Floor"
+  },
+
+  {
+    "roomNo": "1106",
+    "roomName": "Classroom",
+    "block": "Block 1",
+    "floor": "First Floor"
+  },
+
+  {
+    "roomNo": "1107",
+    "roomName": "Classroom",
+    "block": "Block 1",
+    "floor": "First Floor"
+  },
+
+  {
+    "roomNo": "1108",
+    "roomName": "Classroom",
     "block": "Block 1",
     "floor": "First Floor"
   },
@@ -104,6 +141,13 @@ final List<Map<String, dynamic>> rooms = [
     "floor": "Second Floor"
   },
 
+  {
+    "roomNo": "1204",
+    "roomName": "Library And Reading Room",
+    "block": "Block 1",
+    "floor": "Second Floor"
+  },
+
   // THIRD FLOOR
 
   {
@@ -121,8 +165,22 @@ final List<Map<String, dynamic>> rooms = [
   },
 
   {
+    "roomNo": "1303",
+    "roomName": "HOD Cabin",
+    "block": "Block 1",
+    "floor": "Third Floor"
+  },
+
+  {
     "roomNo": "1305",
     "roomName": "EG Lab",
+    "block": "Block 1",
+    "floor": "Third Floor"
+  },
+
+  {
+    "roomNo": "1306",
+    "roomName": "Staff Room",
     "block": "Block 1",
     "floor": "Third Floor"
   },
@@ -144,8 +202,43 @@ final List<Map<String, dynamic>> rooms = [
   // FOURTH FLOOR
 
   {
+    "roomNo": "1401",
+    "roomName": "Classroom",
+    "block": "Block 1",
+    "floor": "Fourth Floor"
+  },
+
+  {
+    "roomNo": "1402",
+    "roomName": "Classroom",
+    "block": "Block 1",
+    "floor": "Fourth Floor"
+  },
+
+  {
     "roomNo": "1403",
-    "roomName": "Pantry For Staff",
+    "roomName": "Staff Pantry",
+    "block": "Block 1",
+    "floor": "Fourth Floor"
+  },
+
+  {
+    "roomNo": "1404",
+    "roomName": "Classroom",
+    "block": "Block 1",
+    "floor": "Fourth Floor"
+  },
+
+  {
+    "roomNo": "1405",
+    "roomName": "Sports Room",
+    "block": "Block 1",
+    "floor": "Fourth Floor"
+  },
+
+  {
+    "roomNo": "1406",
+    "roomName": "Classroom",
     "block": "Block 1",
     "floor": "Fourth Floor"
   },
@@ -178,9 +271,9 @@ final List<Map<String, dynamic>> rooms = [
     "floor": "Fourth Floor"
   },
 
-
-
   // ================= BLOCK 2 =================
+
+  // GROUND FLOOR
 
   {
     "roomNo": "2001",
@@ -204,16 +297,37 @@ final List<Map<String, dynamic>> rooms = [
   },
 
   {
-    "roomNo": "2031",
-    "roomName": "Tutorial Room",
+    "roomNo": "2004",
+    "roomName": "Girls Common Room",
     "block": "Block 2",
-    "floor": "Third Floor"
+    "floor": "Ground Floor"
   },
 
-  // FIRST FLOOR CLASSROOMS
+  {
+    "roomNo": "2005",
+    "roomName": "Power House",
+    "block": "Block 2",
+    "floor": "Ground Floor"
+  },
+
+  {
+    "roomNo": "2007",
+    "roomName": "Sick First Aid Room",
+    "block": "Block 2",
+    "floor": "Ground Floor"
+  },
+
+  // FIRST FLOOR
 
   {
     "roomNo": "2101",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "First Floor"
+  },
+
+  {
+    "roomNo": "2102",
     "roomName": "Classroom",
     "block": "Block 2",
     "floor": "First Floor"
@@ -248,13 +362,6 @@ final List<Map<String, dynamic>> rooms = [
   },
 
   {
-    "roomNo": "2107",
-    "roomName": "Classroom",
-    "block": "Block 2",
-    "floor": "First Floor"
-  },
-
-  {
     "roomNo": "2108",
     "roomName": "Classroom",
     "block": "Block 2",
@@ -271,6 +378,48 @@ final List<Map<String, dynamic>> rooms = [
   // SECOND FLOOR
 
   {
+    "roomNo": "2201",
+    "roomName": "Staff Room",
+    "block": "Block 2",
+    "floor": "Second Floor"
+  },
+
+  {
+    "roomNo": "2202",
+    "roomName": "HOD Cabin",
+    "block": "Block 2",
+    "floor": "Second Floor"
+  },
+
+  {
+    "roomNo": "2203",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Second Floor"
+  },
+
+  {
+    "roomNo": "2204",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Second Floor"
+  },
+
+  {
+    "roomNo": "2205",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Second Floor"
+  },
+
+  {
+    "roomNo": "2206",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Second Floor"
+  },
+
+  {
     "roomNo": "2207",
     "roomName": "VAD / OS Lab",
     "block": "Block 2",
@@ -284,11 +433,46 @@ final List<Map<String, dynamic>> rooms = [
     "floor": "Second Floor"
   },
 
+  {
+    "roomNo": "2210",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Second Floor"
+  },
+
   // THIRD FLOOR
 
   {
     "roomNo": "2301",
     "roomName": "Staff Room",
+    "block": "Block 2",
+    "floor": "Third Floor"
+  },
+
+  {
+    "roomNo": "2302",
+    "roomName": "Tutorial Room",
+    "block": "Block 2",
+    "floor": "Third Floor"
+  },
+
+  {
+    "roomNo": "2303",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Third Floor"
+  },
+
+  {
+    "roomNo": "2304",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Third Floor"
+  },
+
+  {
+    "roomNo": "2306",
+    "roomName": "Classroom",
     "block": "Block 2",
     "floor": "Third Floor"
   },
@@ -307,7 +491,35 @@ final List<Map<String, dynamic>> rooms = [
     "floor": "Third Floor"
   },
 
+  {
+    "roomNo": "2309",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Third Floor"
+  },
+
   // FOURTH FLOOR
+
+  {
+    "roomNo": "2401",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Fourth Floor"
+  },
+
+  {
+    "roomNo": "2403",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Fourth Floor"
+  },
+
+  {
+    "roomNo": "2404",
+    "roomName": "Classroom",
+    "block": "Block 2",
+    "floor": "Fourth Floor"
+  },
 
   {
     "roomNo": "2405A",
@@ -317,7 +529,21 @@ final List<Map<String, dynamic>> rooms = [
   },
 
   {
+    "roomNo": "2405B",
+    "roomName": "Computer Lab",
+    "block": "Block 2",
+    "floor": "Fourth Floor"
+  },
+
+  {
     "roomNo": "2406A",
+    "roomName": "Computer Lab",
+    "block": "Block 2",
+    "floor": "Fourth Floor"
+  },
+
+  {
+    "roomNo": "2406B",
     "roomName": "Computer Lab",
     "block": "Block 2",
     "floor": "Fourth Floor"

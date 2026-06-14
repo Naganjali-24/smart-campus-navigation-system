@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import 'login_screen.dart';
 import 'room_search_screen.dart';
 import 'floor_map_screen.dart';
 import 'about_screen.dart';
 import 'lab_dirctory_screen.dart';
 import 'campus_map_screen.dart';
+import 'faculty_directory_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,13 +18,29 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Smart Campus Navigation"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
+
+              if (!context.mounted) return;
+
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const LoginScreen(),
+                ),
+                    (route) => false,
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-
-            // College Image
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.asset(
@@ -44,10 +64,8 @@ class HomeScreen extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            // Statistics Cards
             Row(
               children: [
-
                 Expanded(
                   child: Card(
                     elevation: 5,
@@ -133,7 +151,7 @@ class HomeScreen extends StatelessWidget {
 
             const SizedBox(height: 25),
 
-            // Room Search
+            // ROOM SEARCH
             ElevatedButton.icon(
               icon: const Icon(Icons.search),
               label: const Text("Room Search"),
@@ -152,7 +170,7 @@ class HomeScreen extends StatelessWidget {
 
             const SizedBox(height: 12),
 
-            // Laboratories
+            // LAB DIRECTORY
             ElevatedButton.icon(
               icon: const Icon(Icons.science),
               label: const Text("Laboratories"),
@@ -171,7 +189,26 @@ class HomeScreen extends StatelessWidget {
 
             const SizedBox(height: 12),
 
-            // Floor Maps
+            // FACULTY DIRECTORY
+            ElevatedButton.icon(
+              icon: const Icon(Icons.person),
+              label: const Text("Faculty Directory"),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 55),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const FacultyDirectoryScreen(),
+                  ),
+                );
+              },
+            ),
+
+            const SizedBox(height: 12),
+
+            // FLOOR MAPS
             ElevatedButton.icon(
               icon: const Icon(Icons.map),
               label: const Text("Floor Maps"),
@@ -190,7 +227,7 @@ class HomeScreen extends StatelessWidget {
 
             const SizedBox(height: 12),
 
-            // Campus Map
+            // CAMPUS MAP
             ElevatedButton.icon(
               icon: const Icon(Icons.location_on),
               label: const Text("Campus Map"),
@@ -209,7 +246,7 @@ class HomeScreen extends StatelessWidget {
 
             const SizedBox(height: 12),
 
-            // About Project
+            // ABOUT PROJECT
             ElevatedButton.icon(
               icon: const Icon(Icons.info),
               label: const Text("About Project"),

@@ -1,14 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'signup_screen.dart';
 import 'home_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final usernameController = TextEditingController();
-    final passwordController = TextEditingController();
+  State<LoginScreen> createState() => _LoginScreenState();
+}
 
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController usernameController =
+  TextEditingController();
+
+  final TextEditingController passwordController =
+  TextEditingController();
+
+  bool isLoading = false;
+
+  Future<void> loginUser() async {
+    try {
+      setState(() {
+        isLoading = true;
+      });
+
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: usernameController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+
+      if (!mounted) return;
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
+      );
+    } on FirebaseAuthException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            e.message ?? "Login Failed",
+          ),
+        ),
+      );
+    }
+
+    setState(() {
+      isLoading = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -49,7 +95,7 @@ class LoginScreen extends StatelessWidget {
               TextField(
                 controller: usernameController,
                 decoration: InputDecoration(
-                  labelText: "Username",
+                  labelText: "Email",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -75,21 +121,31 @@ class LoginScreen extends StatelessWidget {
                 width: double.infinity,
                 height: 55,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
-                    );
-                  },
-                  child: const Text(
+                  onPressed: isLoading ? null : loginUser,
+                  child: isLoading
+                      ? const CircularProgressIndicator()
+                      : const Text(
                     "LOGIN",
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
               ),
 
+              const SizedBox(height: 20),
+
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const SignupScreen(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  "Create New Account",
+                ),
+              ),
               const SizedBox(height: 30),
 
               const Text(
