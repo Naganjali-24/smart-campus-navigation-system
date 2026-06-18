@@ -87,77 +87,115 @@ class _RoomSearchScreenState extends State<RoomSearchScreen> {
             const SizedBox(height: 20),
 
             if (result != null)
-              Card(
-                elevation: 6,
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      const Icon(
-                        Icons.location_on,
-                        color: Colors.blue,
-                        size: 50,
-                      ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Card(
+                    elevation: 6,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          const Icon(
+                            Icons.location_on,
+                            color: Colors.blue,
+                            size: 50,
+                          ),
 
-                      const SizedBox(height: 10),
+                          const SizedBox(height: 10),
 
-                      Text(
-                        result!["roomName"],
-                        style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                          Text(
+                            result!["roomName"],
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
 
-                      const SizedBox(height: 15),
+                          const SizedBox(height: 15),
 
-                      Text(
-                        "Room Number : ${result!["roomNo"]}",
-                        style: const TextStyle(fontSize: 16),
-                      ),
+                          Text(
+                            "Room Number : ${result!["roomNo"]}",
+                            style: const TextStyle(fontSize: 16),
+                          ),
 
-                      Text(
-                        "Block : ${result!["block"]}",
-                        style: const TextStyle(fontSize: 16),
-                      ),
+                          Text(
+                            "Block : ${result!["block"]}",
+                            style: const TextStyle(fontSize: 16),
+                          ),
 
-                      Text(
-                        "Floor : ${result!["floor"]}",
-                        style: const TextStyle(fontSize: 16),
-                      ),
+                          Text(
+                            "Floor : ${result!["floor"]}",
+                            style: const TextStyle(fontSize: 16),
+                          ),
 
-                      const SizedBox(height: 20),
+                          const SizedBox(height: 15),
 
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          openMaps(result!["block"]);
-                        },
-                        icon: const Icon(Icons.navigation),
-                        label: Text(
-                          "Navigate To ${result!["block"]}",
-                        ),
-                      ),
+                          const Divider(),
 
-                      const SizedBox(height: 10),
+                          const SizedBox(height: 10),
 
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => FloorLayoutScreen(
-                                block: result!["block"],
-                                floor: result!["floor"],
+                          const Text(
+                            "Directions",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
+                            ),
+                          ),
+
+                          const SizedBox(height: 10),
+
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.blue.shade50,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Text(
+                              result!["direction"] ??
+                                  "No directions available",
+                              style: const TextStyle(
+                                fontSize: 16,
                               ),
                             ),
-                          );
-                        },
-                        icon: const Icon(Icons.map),
-                        label: const Text(
-                          "View Floor Map",
-                        ),
+                          ),
+
+                          const SizedBox(height: 20),
+
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              openMaps(result!["block"]);
+                            },
+                            icon: const Icon(Icons.navigation),
+                            label: Text(
+                              "Navigate To ${result!["block"]}",
+                            ),
+                          ),
+
+                          const SizedBox(height: 10),
+
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => FloorLayoutScreen(
+                                    block: result!["block"],
+                                    floor: result!["floor"],
+                                  ),
+                                ),
+                              );
+                            },
+                            icon: const Icon(Icons.map),
+                            label: const Text(
+                              "View Floor Map",
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),

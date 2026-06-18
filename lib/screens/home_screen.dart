@@ -6,7 +6,6 @@ import 'room_search_screen.dart';
 import 'floor_map_screen.dart';
 import 'about_screen.dart';
 import 'lab_dirctory_screen.dart';
-import 'campus_map_screen.dart';
 import 'faculty_directory_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -220,25 +219,6 @@ class HomeScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (_) => const FloorMapScreen(),
-                  ),
-                );
-              },
-            ),
-
-            const SizedBox(height: 12),
-
-            // CAMPUS MAP
-            ElevatedButton.icon(
-              icon: const Icon(Icons.location_on),
-              label: const Text("Campus Map"),
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 55),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => const CampusMapScreen(),
                   ),
                 );
               },
